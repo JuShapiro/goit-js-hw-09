@@ -1,2 +1,2 @@
-import"./assets/styles-dc8f60da.js";console.log("Form");
+import"./assets/styles-dc8f60da.js";const a=document.querySelector(".feedback-form"),o=a.elements.email,l=a.elements.message,s="feedback-form-state";a.addEventListener("input",e=>{const t={email:o.value.trim(),message:l.value.trim()};localStorage.setItem(s,JSON.stringify(t))});function m(){const e=JSON.parse(localStorage.getItem(s))||{};o.value=e.email||"",l.value=e.message||""}m();a.addEventListener("submit",e=>{e.preventDefault();const t=JSON.parse(localStorage.getItem(s))||{};t.email&&t.message&&console.log(t),localStorage.removeItem(s),a.reset()});
 //# sourceMappingURL=commonHelpers2.js.map
