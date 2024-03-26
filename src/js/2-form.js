@@ -1,6 +1,6 @@
 const form = document.querySelector('.feedback-form');
 const emailInput = form.elements.email;
-const textInput = form.elements.message;
+const messageInput = form.elements.message;
 const storageKey = 'feedback-form-state';
 
 form.addEventListener('input', onInput);
@@ -10,7 +10,7 @@ loadPage();
 function onInput(event) {
   const inputValues = {
     email: emailInput.value.trim(),
-    message: textInput.value.trim(),
+    message: messageInput.value.trim(),
   };
   localStorage.setItem(storageKey, JSON.stringify(inputValues));
 }
@@ -18,7 +18,7 @@ function onInput(event) {
 function loadPage() {
   const savedValues = JSON.parse(localStorage.getItem(storageKey)) || {};
   emailInput.value = savedValues.email || '';
-  textInput.value = savedValues.message || '';
+  messageInput.value = savedValues.message || '';
 }
 
 function onSubmit(event) {
@@ -27,7 +27,7 @@ function onSubmit(event) {
   const message = event.currentTarget.elements.message.value.trim();
 
   if (!email || !message) {
-    alert('Filled all fields of form');
+    alert('All form fields must be filled in');
     return;
   }
   console.log({ email, message });
