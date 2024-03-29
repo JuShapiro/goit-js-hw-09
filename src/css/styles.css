@@ -39,12 +39,6 @@ body {
   gap: 30px;
 }
 
-.gallery-title,
-.form-title {
-  margin-bottom: 30px;
-  font-weight: 400;
-}
-
 .gallery {
   display: flex;
   flex-wrap: wrap;
